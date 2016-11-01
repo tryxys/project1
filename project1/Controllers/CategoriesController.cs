@@ -76,8 +76,12 @@ public ActionResult Details(int id)
 
         // GET: Categories/Delete/5
         public ActionResult Delete(int id)
+
         {
-            return View();
+            //memanggil method delete
+            CategoriesDAL categoriesDAL = new CategoriesDAL();
+            var model = categoriesDAL.GetById(id);
+            return View(model);
         }
 
         // POST: Categories/Delete/5
